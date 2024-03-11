@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+const area = document.getElementById("root");
+const root = createRoot(area);
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+); -->

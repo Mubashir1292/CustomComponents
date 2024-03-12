@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import DropDown from "../../components/dropDown/DropDown";
-
 function DropDownPage() {
+  const [selection, setSelection] = useState(null);
   const options = [
     {
       label: "AI",
@@ -20,9 +20,16 @@ function DropDownPage() {
       value: "Generic Projects",
     },
   ];
+  const handleSelection = (option) => {
+    setSelection(option);
+  };
   return (
     <div>
-      <DropDown options={options}></DropDown>
+      <DropDown
+        options={options}
+        selection={selection}
+        onSelect={handleSelection}
+      ></DropDown>
     </div>
   );
 }

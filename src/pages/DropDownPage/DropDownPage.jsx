@@ -27,8 +27,8 @@ function DropDownPage() {
     <div>
       <DropDown
         options={options}
-        selection={selection}
-        onSelect={handleSelection}
+        value={selection}
+        onChange={handleSelection}
       ></DropDown>
     </div>
   );

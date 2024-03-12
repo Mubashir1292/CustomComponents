@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function DropDown({ options, selection, onSelect }) {
+function DropDown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = (option) => {
     setIsOpen(!isOpen);
@@ -10,7 +10,7 @@ function DropDown({ options, selection, onSelect }) {
       <div
         onClick={() => {
           handleClick(item);
-          onSelect(item);
+          onChange(item);
         }}
         className="cursor-pointer"
       >
@@ -18,13 +18,9 @@ function DropDown({ options, selection, onSelect }) {
       </div>
     </div>
   ));
-  let content = "Choose Domain...";
-  if (selection) {
-    content = selection.value;
-  }
   return (
     <div className="flex flex-col">
-      <div onClick={handleClick}>{content}</div>
+      <div onClick={handleClick}>{value?.value || "Select Domain.."}</div>
       {isOpen && <div> {renderedOptions}</div>}
     </div>
   );
